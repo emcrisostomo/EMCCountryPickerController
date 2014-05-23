@@ -1042,6 +1042,7 @@
 		90610F15192FA69300D69163 /* ZM@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZM@2x.png"; sourceTree = "<group>"; };
 		90610F16192FA69300D69163 /* ZW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZW.png; sourceTree = "<group>"; };
 		90610F17192FA69300D69163 /* ZW@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZW@2x.png"; sourceTree = "<group>"; };
+		9061110C192FB0D900D69163 /* ChangeLog */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChangeLog; path = ../ChangeLog; sourceTree = "<group>"; };
 		90FE0BAB192F99650056E748 /* EMCCountryPickerControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCCountryPickerControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FE0BAE192F99650056E748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90FE0BB0192F99650056E748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1609,6 +1610,7 @@
 		90FE0BA2192F99650056E748 = {
 			isa = PBXGroup;
 			children = (
+				9061110C192FB0D900D69163 /* ChangeLog */,
 				90FE0BB4192F99650056E748 /* EMCCountryPickerControllerDemo */,
 				90FE0BD6192F99660056E748 /* EMCCountryPickerControllerDemoTests */,
 				90FE0BAD192F99650056E748 /* Frameworks */,

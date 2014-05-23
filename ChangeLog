@@ -3,20 +3,27 @@ ChangeLog
 
 2014-05-23  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
-        release: stable micro release 0.0.4:
+	release: stable micro release 0.0.4:
 
 	* .gitignore: Update .gitignore with recommended Objective C and XCode
 	              exclusions.
-        * ChangeLog:
-          - Update.
+    * ChangeLog:
+      - Update.
+    * Classes/EMCCountryDelegate.h: Refactor protocol.
 	* Classes/EMCCountryPickerController.h: Make delegate an IBOutlet.
 	* Classes/EMCCountryPickerController.m:
 	  - Require ARC to compile.
 	  - Issue warning to console if delegate is not set.
-        * EMCCountryPickerControllerDemo/*: Add demo project.
+      - Refactor protocol.
+    * EMCCountryPickerControllerDemo/*: Add demo project.
+    * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo.xcodeproj/project.pbxproj:
+      - Add ChangeLog to XCode project.
+    * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
+      - Refactor protocol.
+    * README.md: Update.
 
 2014-18-03  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
-        release: stable micro release 0.0.3:
+    release: stable micro release 0.0.3:
 
 	* ./*: Initial commit, moved from a private project.

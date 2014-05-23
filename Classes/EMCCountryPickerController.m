@@ -215,7 +215,7 @@
         NSLog(@"Delegate is not set, the view controller will not be dismissed.");
     }
     
-    [self.countryDelegate cityController:self city:_selectedCountry];
+    [self.countryDelegate countryController:self didSelectCountry:_selectedCountry];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

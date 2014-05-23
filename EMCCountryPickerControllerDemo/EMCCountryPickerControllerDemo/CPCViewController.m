@@ -27,7 +27,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)cityController:(id)sender city:(EMCCountry *)chosenCity
+- (void)countryController:(id)sender didSelectCountry:(EMCCountry *)chosenCity
 {
     self.countryLabel.text = chosenCity.countryName;
     [self dismissViewControllerAnimated:YES completion:nil];
