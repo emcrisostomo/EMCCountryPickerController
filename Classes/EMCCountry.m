@@ -63,7 +63,24 @@ static NSString * const kDefaultLocale = @"en";
 
 - (NSString *)countryName
 {
-    NSString *localisedName = _names[[[NSLocale preferredLanguages] objectAtIndex:0]];
+    return [self countryNameWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]];
+}
+
+- (NSString *)countryNameWithLocale:(NSLocale *)locale
+{
+    NSString *localisedName = _names[locale.localeIdentifier];
+    
+    if (localisedName)
+    {
+        return localisedName;
+    }
+    
+    return _names[kDefaultLocale];
+}
+
+- (NSString *)countryNameWithLocaleIdentifier:(NSString *)localeIdentifier
+{
+    NSString *localisedName = _names[localeIdentifier];
     
     if (localisedName)
     {

@@ -15,5 +15,7 @@
 + (instancetype)countryWithCountryCode:(NSString *)code localizedNames:(NSDictionary *)names;
 - (instancetype)initWithCountryCode:(NSString *)code localizedNames:(NSDictionary *)names;
 - (NSString *)countryName;
+- (NSString *)countryNameWithLocale:(NSLocale *)locale;
+- (NSString *)countryNameWithLocaleIdentifier:(NSString *)localeIdentifier;
 
 @end
