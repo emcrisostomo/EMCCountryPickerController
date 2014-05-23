@@ -1,0 +1,19 @@
+ChangeLog
+*********
+
+2014-05-23  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
+        release: stable micro release 0.0.4:
+
+	* .gitignore: Update .gitignore with recommended Objective C and XCode
+	              exclusions.
+        * ChangeLog:
+          - Update.
+        * EMCCountryPickerControllerDemo/*: Add demo project.
+	* Classes/EMCCountryPickerController.h: Make delegate an IBOutlet.
+
+2014-18-03  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
+        release: stable micro release 0.0.3:
+
+	* ./*: Initial commit, moved from a private project.
