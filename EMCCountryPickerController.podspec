@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
                    codes are used internally by the controller implementation.
                    DESC
   s.homepage     = "https://github.com/emcrisostomo/EMCCountryPickerController"
-  s.screenshots  = "https://github.com/emcrisostomo/EMCCountryPickerController/blob/master/Screenshots/main-view.jpg", "https://github.com/emcrisostomo/EMCCountryPickerController/blob/master/Screenshots/main-view-with-flags.jpg"
   s.license      = { :type => "BSD", :file => "LICENSE" }
   s.author             = { "Enrico M. Crisostomo" => "http://thegreyblog.blogspot.com/" }
   s.social_media_url   = "http://thegreyblog.blogspot.com"
