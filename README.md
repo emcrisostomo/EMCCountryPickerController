@@ -27,6 +27,60 @@ a country's flag is shown at the left of the country name.
 ![Main view](/Screenshots/main-view.png "Main View")
 ![Main view with flags](/Screenshots/main-view-with-flags.png "Main View with Flags")
 
+Prerequisites
+-------------
+
+This library has been built with XCode 5.1.1 using iOS 7.1 as a build target.
+The library is expected to work down to iOS 6 but it has not been tested with
+any target older than iOS 7.0.
+
+This library requires [ARC][arc] (_Automatic Reference Counting_) and
+compilation will fail if ARC support is not available.
+
+[arc]: http://en.wikipedia.org/wiki/Automatic_Reference_Counting
+
+Usage
+-----
+
+The `EMCCountryPickerController` must be presented modally by the presenting
+view controller.  The `EMCCountryPickerController` won't dismiss itself when a
+country is chosen.  Instead, `EMCCountryPickerController` instance will rely on
+a delegate conforming to the `EMCCountryDelegate` protocol to receive the
+country selection event and to dismiss it.  The delegate can be set either in
+Interface Builder using the `countryDelegate` outlet or programmatically using
+the `countryDelegate` property.  When using a storyboard, since an outlet
+cannot be connected to a controller in another controller, the controller setup
+is usually performed in `prepareForSegue:sender:`:
+
+```
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"openCountryPicker"])
+    {
+        EMCCountryPickerController *countryPicker = segue.destinationViewController;
+        countryPicker.countryDelegate = self;
+    }
+}
+```
+
+The `EMCCountryDelegate` protocol defines one selector which is invoked when a
+country has been selected:
+
+```
+- (void)countryController:(id)sender didSelectCountry:(EMCCountry *)chosenCountry;
+```
+
+The presenting view controller usually conforms to this protocol, receives the
+notification and dismisses the `EMCCountryPickerController` instance:
+
+```
+- (void)countryController:(id)sender didSelectCountry:(EMCCountry *)chosenCountry;
+{
+    // Do something with chosenCountry
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+```
+
 ----
 Copyright (c) 2014, Enrico Maria Crisostomo
 All rights reserved.
