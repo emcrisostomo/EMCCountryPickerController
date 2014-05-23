@@ -9,8 +9,11 @@ ChangeLog
 	              exclusions.
         * ChangeLog:
           - Update.
-        * EMCCountryPickerControllerDemo/*: Add demo project.
 	* Classes/EMCCountryPickerController.h: Make delegate an IBOutlet.
+	* Classes/EMCCountryPickerController.m:
+	  - Require ARC to compile.
+	  - Issue warning to console if delegate is not set.
+        * EMCCountryPickerControllerDemo/*: Add demo project.
 
 2014-18-03  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 

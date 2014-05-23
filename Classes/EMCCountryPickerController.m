@@ -10,6 +10,10 @@
 #import "UIImage+UIImage_EMCImageResize.h"
 #import "EMCCountryManager.h"
 
+#if !__has_feature(objc_arc)
+    #error This class requires ARC support to be enabled.
+#endif
+
 @interface EMCCountryPickerController ()
 
 @end
@@ -204,6 +208,11 @@
     else
     {
         _selectedCountry = [_countries objectAtIndex:indexPath.row];
+    }
+    
+    if (!self.countryDelegate)
+    {
+        NSLog(@"Delegate is not set, the view controller will not be dismissed.");
     }
     
     [self.countryDelegate cityController:self city:_selectedCountry];
