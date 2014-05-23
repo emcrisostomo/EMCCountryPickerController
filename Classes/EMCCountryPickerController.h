@@ -14,6 +14,6 @@
 
 - (void)chooseCountry:(EMCCountry *)chosenCountry;
 
-@property (weak) id<EMCCountryDelegate> countryDelegate;
+@property (weak) IBOutlet id<EMCCountryDelegate> countryDelegate;
 
 @end
