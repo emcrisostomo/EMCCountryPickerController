@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PMMCountryDelegate.h"
-#import "PMMCountry.h"
+#import "EMCCountryDelegate.h"
+#import "EMCCountry.h"
 
 @interface EMCCountryPickerController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
-- (void)chooseCountry:(PMMCountry *)chosenCountry;
+- (void)chooseCountry:(EMCCountry *)chosenCountry;
 
-@property (weak) id<PMMCountryDelegate> countryDelegate;
+@property (weak) id<EMCCountryDelegate> countryDelegate;
 
 @end

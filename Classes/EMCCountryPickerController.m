@@ -8,7 +8,7 @@
 
 #import "EMCCountryPickerController.h"
 #import "UIImage+UIImage_PMMImageResize.h"
-#import "PMMCountryManager.h"
+#import "EMCCountryManager.h"
 
 @interface EMCCountryPickerController ()
 
@@ -20,7 +20,7 @@
     UISearchBar *searchBar;
     UIView *rootView;
     UITableView *countryTable;
-    PMMCountry * _selectedCountry;
+    EMCCountry * _selectedCountry;
     NSArray *_countries;
     NSArray *_countrySearchResults;
 }
@@ -127,7 +127,7 @@
     }
 }
 
-- (void)chooseCountry:(PMMCountry *)chosenCountry;
+- (void)chooseCountry:(EMCCountry *)chosenCountry;
 {
     _selectedCountry = chosenCountry;
 }
@@ -241,7 +241,7 @@
 
 - (void)loadCountries
 {
-    NSArray * allCountries = [[PMMCountryManager countryManager] allCountries];
+    NSArray * allCountries = [[EMCCountryManager countryManager] allCountries];
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"countryName" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:nameDescriptor, nil];
     _countries = [allCountries sortedArrayUsingDescriptors:descriptors];
@@ -251,7 +251,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
 
-    PMMCountry *currentCountry;
+    EMCCountry *currentCountry;
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
