@@ -3,7 +3,7 @@ ChangeLog
 
 2014-05-23  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
-	release: stable micro release 0.0.4:
+	release: stable major release 1.0.0:
 
 	* .gitignore: Update .gitignore with recommended Objective C and XCode
 	              exclusions.
@@ -15,9 +15,11 @@ ChangeLog
 	  - Require ARC to compile.
 	  - Issue warning to console if delegate is not set.
       - Refactor protocol.
+    * EMCCountryPickerController.podspec: Bump v. 1.0.0.
     * EMCCountryPickerControllerDemo/*: Add demo project.
     * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo.xcodeproj/project.pbxproj:
       - Add ChangeLog to XCode project.
+      - Add EMCCountryPickerController.podspec to XCode project.
     * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
       - Refactor protocol.
     * README.md: Update.
