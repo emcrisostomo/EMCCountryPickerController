@@ -21,6 +21,9 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                    EMCCountryPickerController is a view controller allowing users to choose and filter countries in a list.
+                   The view controller must be presented modally and it contains:
+                     * A table view listing the countries.
+                     * A search bar and a search bar controller. 
                    DESC
 
   s.homepage     = "https://github.com/emcrisostomo/EMCCountryPickerController"
@@ -34,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "BSD", :file => "FILE_LICENSE" }
+  s.license      = { :type => "BSD", :file => "LICENSE" }
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -59,7 +62,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
+  s.platform     = :ios, "5.0"
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
