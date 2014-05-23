@@ -17,7 +17,7 @@ following:
 
   * A search bar is anchored to the bottom of the top layout guide.
   * A table view is anchored to the bottom of the search bar and to the top of
-    the bommom layout guide.
+    the bottom layout guide.
   * The view is a full screen view designed to be presented modally.
 
 The table view presents the list of countries, sorted by name, in the current
@@ -97,11 +97,11 @@ The current implementation selects the locale using the following algorithm:
   * If the `countryNameDisplayLocale` property of the view controller instance
     is set and not null, then a country name in the specified locale will be
     requested.
-  * If a translation in the `countryNameDisplayLocale` locale is not avilable
+  * If a translation in the `countryNameDisplayLocale` locale is not available
     or it is null, then a translation in the first preferred locale will be
     requested, where the preferred locale is obtained using
     `[[NSLocale preferredLanguages] objectAtIndex:0]`.
-  * If a translation in the preferred locale is not avilable, use English.
+  * If a translation in the preferred locale is not available, use English.
 
 Demo Code
 ---------
