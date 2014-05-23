@@ -1,9 +1,9 @@
 //
-//  PMMChooseCountryViewControllerManual.h
-//  
+//  EMCChooseCountryViewControllerManual.h
+//  EMCCountryPickerController
 //
 //  Created by Enrico Maria Crisostomo on 12/05/14.
-//
+//  Copyright (c) 2014 Enrico Maria Crisostomo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
