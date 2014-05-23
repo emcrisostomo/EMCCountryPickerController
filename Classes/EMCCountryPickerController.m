@@ -7,7 +7,7 @@
 //
 
 #import "EMCCountryPickerController.h"
-#import "UIImage+UIImage_PMMImageResize.h"
+#import "UIImage+UIImage_EMCImageResize.h"
 #import "EMCCountryManager.h"
 
 @interface EMCCountryPickerController ()
