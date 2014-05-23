@@ -272,7 +272,15 @@
     }
     
     NSString *countryCode = [currentCountry countryCode];
-    cell.textLabel.text = [currentCountry countryName];
+
+    if (self.countryNameDisplayLocale)
+    {
+        cell.textLabel.text = [currentCountry countryNameWithLocale:self.countryNameDisplayLocale];
+    }
+    else
+    {
+        cell.textLabel.text = [currentCountry countryName];
+    }
   
     // Resize flag
     cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];

@@ -92,6 +92,38 @@ The `EMCCountryPickerController` library ships with localised country names in:
 Support for additional languages can be easily added by updating the
 `countries.plist` file.
 
+The current implementation selects the locale using the following algorithm:
+
+  * If the `countryNameDisplayLocale` property of the view controller instance
+    is set and not null, then a country name in the specified locale will be
+    requested.
+  * If a translation in the `countryNameDisplayLocale` locale is not avilable
+    or it is null, then a translation in the first preferred locale will be
+    requested, where the preferred locale is obtained using
+    `[[NSLocale preferredLanguages] objectAtIndex:0]`.
+  * If a translation in the preferred locale is not avilable, use English.
+
+Demo Code
+---------
+
+A demo project named `EMCCountryPickerControllerDemo` using a storyboard and
+highlighting the library major features is shipped with the library code.
+
+Getting the Software
+--------------------
+
+The recommended way to get the sources of `EMCCountryPickerController` in order
+to build it on your system is getting a [release tarball][release]. 
+
+[release]: https://github.com/emcrisostomo/EMCCountryPickerController/releases
+
+Bug Reports
+-----------
+
+Bug reports can be opened at the [official GitHub repository][cp].
+
+[cp]: https://github.com/emcrisostomo/EMCCountryPickerController
+
 ----
 Copyright (c) 2014, Enrico Maria Crisostomo
 All rights reserved.

@@ -12,7 +12,13 @@ ChangeLog
     * Classes/EMCCountry.h: Add methods to get a localised country name.
     * Classes/EMCCountry.m: Add methods to get a localised country name.
     * Classes/EMCCountryDelegate.h: Refactor protocol.
-	* Classes/EMCCountryPickerController.h: Make delegate an IBOutlet.
+	* Classes/EMCCountryPickerController.h:
+      - Make delegate an IBOutlet.
+      - Add countryNameDisplayLocale property to allow users to specify the
+        desired locale.
+	* Classes/EMCCountryPickerController.m:
+      - Add countryNameDisplayLocale property to allow users to specify the
+        desired locale.
 	* Classes/EMCCountryPickerController.m:
 	  - Require ARC to compile.
 	  - Issue warning to console if delegate is not set.

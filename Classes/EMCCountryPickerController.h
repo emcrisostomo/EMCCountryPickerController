@@ -15,5 +15,6 @@
 - (void)chooseCountry:(EMCCountry *)chosenCountry;
 
 @property (weak) IBOutlet id<EMCCountryDelegate> countryDelegate;
+@property NSLocale *countryNameDisplayLocale;
 
 @end
