@@ -3,7 +3,7 @@
 //  Push Money Mobile
 //
 //  Created by Enrico Maria Crisostomo on 18/05/14.
-//  Copyright (c) 2014 Grey Systems. All rights reserved.
+//  Copyright (c) 2014 Enrico M. Crisostomo. All rights reserved.
 //
 
 #import "EMCCountryManager.h"

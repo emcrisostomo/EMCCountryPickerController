@@ -3,7 +3,7 @@
 //  EMCCountryPickerController
 //
 //  Created by Enrico Maria Crisostomo on 17/05/14.
-//  Copyright (c) 2014 Enrico Maria Crisostomo. All rights reserved.
+//  Copyright (c) 2014 Enrico M. Crisostomo. All rights reserved.
 //
 
 #import "UIImage+UIImage_EMCImageResize.h"

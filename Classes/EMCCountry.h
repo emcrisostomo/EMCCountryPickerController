@@ -3,7 +3,7 @@
 //  EMCCountryPickerController
 //
 //  Created by Enrico Maria Crisostomo on 18/05/14.
-//  Copyright (c) 2014 Enrico Maria Crisostomo. All rights reserved.
+//  Copyright (c) 2014 Enrico M. Crisostomo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
