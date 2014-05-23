@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90FE0BAF192F99650056E748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BAE192F99650056E748 /* Foundation.framework */; };
+		90FE0BB1192F99650056E748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB0192F99650056E748 /* CoreGraphics.framework */; };
+		90FE0BB3192F99650056E748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB2192F99650056E748 /* UIKit.framework */; };
+		90FE0BB9192F99650056E748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BB7192F99650056E748 /* InfoPlist.strings */; };
+		90FE0BBB192F99650056E748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BBA192F99650056E748 /* main.m */; };
+		90FE0BBF192F99650056E748 /* CPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BBE192F99650056E748 /* CPCAppDelegate.m */; };
+		90FE0BC2192F99660056E748 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BC0192F99660056E748 /* Main_iPhone.storyboard */; };
+		90FE0BC5192F99660056E748 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BC3192F99660056E748 /* Main_iPad.storyboard */; };
+		90FE0BC8192F99660056E748 /* CPCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BC7192F99660056E748 /* CPCViewController.m */; };
+		90FE0BCA192F99660056E748 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BC9192F99660056E748 /* Images.xcassets */; };
+		90FE0BD1192F99660056E748 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BD0192F99660056E748 /* XCTest.framework */; };
+		90FE0BD2192F99660056E748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BAE192F99650056E748 /* Foundation.framework */; };
+		90FE0BD3192F99660056E748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB2192F99650056E748 /* UIKit.framework */; };
+		90FE0BDB192F99660056E748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BD9192F99660056E748 /* InfoPlist.strings */; };
+		90FE0BDD192F99660056E748 /* EMCCountryPickerControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BDC192F99660056E748 /* EMCCountryPickerControllerDemoTests.m */; };
+		90FE0BF0192F999E0056E748 /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BE6192F999D0056E748 /* countries.plist */; };
+		90FE0BF1192F999E0056E748 /* EMCCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BE8192F999E0056E748 /* EMCCountry.m */; };
+		90FE0BF2192F999E0056E748 /* EMCCountryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BEB192F999E0056E748 /* EMCCountryManager.m */; };
+		90FE0BF3192F999E0056E748 /* EMCCountryPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BED192F999E0056E748 /* EMCCountryPickerController.m */; };
+		90FE0BF4192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BEF192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90FE0BD4192F99660056E748 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90FE0BA3192F99650056E748 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90FE0BAA192F99650056E748;
+			remoteInfo = EMCCountryPickerControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		90FE0BAB192F99650056E748 /* EMCCountryPickerControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCCountryPickerControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90FE0BAE192F99650056E748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90FE0BB0192F99650056E748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		90FE0BB2192F99650056E748 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		90FE0BB6192F99650056E748 /* EMCCountryPickerControllerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMCCountryPickerControllerDemo-Info.plist"; sourceTree = "<group>"; };
+		90FE0BB8192F99650056E748 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90FE0BBA192F99650056E748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90FE0BBC192F99650056E748 /* EMCCountryPickerControllerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EMCCountryPickerControllerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		90FE0BBD192F99650056E748 /* CPCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPCAppDelegate.h; sourceTree = "<group>"; };
+		90FE0BBE192F99650056E748 /* CPCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPCAppDelegate.m; sourceTree = "<group>"; };
+		90FE0BC1192F99660056E748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		90FE0BC4192F99660056E748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		90FE0BC6192F99660056E748 /* CPCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPCViewController.h; sourceTree = "<group>"; };
+		90FE0BC7192F99660056E748 /* CPCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPCViewController.m; sourceTree = "<group>"; };
+		90FE0BC9192F99660056E748 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		90FE0BCF192F99660056E748 /* EMCCountryPickerControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMCCountryPickerControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90FE0BD0192F99660056E748 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		90FE0BD8192F99660056E748 /* EMCCountryPickerControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMCCountryPickerControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
+		90FE0BDA192F99660056E748 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90FE0BDC192F99660056E748 /* EMCCountryPickerControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMCCountryPickerControllerDemoTests.m; sourceTree = "<group>"; };
+		90FE0BE6192F999D0056E748 /* countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = countries.plist; path = ../../Classes/countries.plist; sourceTree = "<group>"; };
+		90FE0BE7192F999E0056E748 /* EMCCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountry.h; path = ../../Classes/EMCCountry.h; sourceTree = "<group>"; };
+		90FE0BE8192F999E0056E748 /* EMCCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMCCountry.m; path = ../../Classes/EMCCountry.m; sourceTree = "<group>"; };
+		90FE0BE9192F999E0056E748 /* EMCCountryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountryDelegate.h; path = ../../Classes/EMCCountryDelegate.h; sourceTree = "<group>"; };
+		90FE0BEA192F999E0056E748 /* EMCCountryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountryManager.h; path = ../../Classes/EMCCountryManager.h; sourceTree = "<group>"; };
+		90FE0BEB192F999E0056E748 /* EMCCountryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMCCountryManager.m; path = ../../Classes/EMCCountryManager.m; sourceTree = "<group>"; };
+		90FE0BEC192F999E0056E748 /* EMCCountryPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountryPickerController.h; path = ../../Classes/EMCCountryPickerController.h; sourceTree = "<group>"; };
+		90FE0BED192F999E0056E748 /* EMCCountryPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMCCountryPickerController.m; path = ../../Classes/EMCCountryPickerController.m; sourceTree = "<group>"; };
+		90FE0BEE192F999E0056E748 /* UIImage+UIImage_EMCImageResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+UIImage_EMCImageResize.h"; path = "../../Classes/UIImage+UIImage_EMCImageResize.h"; sourceTree = "<group>"; };
+		90FE0BEF192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+UIImage_EMCImageResize.m"; path = "../../Classes/UIImage+UIImage_EMCImageResize.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90FE0BA8192F99650056E748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BB1192F99650056E748 /* CoreGraphics.framework in Frameworks */,
+				90FE0BB3192F99650056E748 /* UIKit.framework in Frameworks */,
+				90FE0BAF192F99650056E748 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FE0BCC192F99660056E748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BD1192F99660056E748 /* XCTest.framework in Frameworks */,
+				90FE0BD3192F99660056E748 /* UIKit.framework in Frameworks */,
+				90FE0BD2192F99660056E748 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90FE0BA2192F99650056E748 = {
+			isa = PBXGroup;
+			children = (
+				90FE0BB4192F99650056E748 /* EMCCountryPickerControllerDemo */,
+				90FE0BD6192F99660056E748 /* EMCCountryPickerControllerDemoTests */,
+				90FE0BAD192F99650056E748 /* Frameworks */,
+				90FE0BAC192F99650056E748 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90FE0BAC192F99650056E748 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BAB192F99650056E748 /* EMCCountryPickerControllerDemo.app */,
+				90FE0BCF192F99660056E748 /* EMCCountryPickerControllerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90FE0BAD192F99650056E748 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BAE192F99650056E748 /* Foundation.framework */,
+				90FE0BB0192F99650056E748 /* CoreGraphics.framework */,
+				90FE0BB2192F99650056E748 /* UIKit.framework */,
+				90FE0BD0192F99660056E748 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90FE0BB4192F99650056E748 /* EMCCountryPickerControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BF5192F99A20056E748 /* EMCCountryPickerController */,
+				90FE0BE6192F999D0056E748 /* countries.plist */,
+				90FE0BBD192F99650056E748 /* CPCAppDelegate.h */,
+				90FE0BBE192F99650056E748 /* CPCAppDelegate.m */,
+				90FE0BC0192F99660056E748 /* Main_iPhone.storyboard */,
+				90FE0BC3192F99660056E748 /* Main_iPad.storyboard */,
+				90FE0BC6192F99660056E748 /* CPCViewController.h */,
+				90FE0BC7192F99660056E748 /* CPCViewController.m */,
+				90FE0BC9192F99660056E748 /* Images.xcassets */,
+				90FE0BB5192F99650056E748 /* Supporting Files */,
+			);
+			path = EMCCountryPickerControllerDemo;
+			sourceTree = "<group>";
+		};
+		90FE0BB5192F99650056E748 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BB6192F99650056E748 /* EMCCountryPickerControllerDemo-Info.plist */,
+				90FE0BB7192F99650056E748 /* InfoPlist.strings */,
+				90FE0BBA192F99650056E748 /* main.m */,
+				90FE0BBC192F99650056E748 /* EMCCountryPickerControllerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90FE0BD6192F99660056E748 /* EMCCountryPickerControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BDC192F99660056E748 /* EMCCountryPickerControllerDemoTests.m */,
+				90FE0BD7192F99660056E748 /* Supporting Files */,
+			);
+			path = EMCCountryPickerControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		90FE0BD7192F99660056E748 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BD8192F99660056E748 /* EMCCountryPickerControllerDemoTests-Info.plist */,
+				90FE0BD9192F99660056E748 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90FE0BF5192F99A20056E748 /* EMCCountryPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				90FE0BE7192F999E0056E748 /* EMCCountry.h */,
+				90FE0BE8192F999E0056E748 /* EMCCountry.m */,
+				90FE0BE9192F999E0056E748 /* EMCCountryDelegate.h */,
+				90FE0BEA192F999E0056E748 /* EMCCountryManager.h */,
+				90FE0BEB192F999E0056E748 /* EMCCountryManager.m */,
+				90FE0BEC192F999E0056E748 /* EMCCountryPickerController.h */,
+				90FE0BED192F999E0056E748 /* EMCCountryPickerController.m */,
+				90FE0BEE192F999E0056E748 /* UIImage+UIImage_EMCImageResize.h */,
+				90FE0BEF192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m */,
+			);
+			name = EMCCountryPickerController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90FE0BAA192F99650056E748 /* EMCCountryPickerControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90FE0BE0192F99660056E748 /* Build configuration list for PBXNativeTarget "EMCCountryPickerControllerDemo" */;
+			buildPhases = (
+				90FE0BA7192F99650056E748 /* Sources */,
+				90FE0BA8192F99650056E748 /* Frameworks */,
+				90FE0BA9192F99650056E748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMCCountryPickerControllerDemo;
+			productName = EMCCountryPickerControllerDemo;
+			productReference = 90FE0BAB192F99650056E748 /* EMCCountryPickerControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		90FE0BCE192F99660056E748 /* EMCCountryPickerControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90FE0BE3192F99660056E748 /* Build configuration list for PBXNativeTarget "EMCCountryPickerControllerDemoTests" */;
+			buildPhases = (
+				90FE0BCB192F99660056E748 /* Sources */,
+				90FE0BCC192F99660056E748 /* Frameworks */,
+				90FE0BCD192F99660056E748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90FE0BD5192F99660056E748 /* PBXTargetDependency */,
+			);
+			name = EMCCountryPickerControllerDemoTests;
+			productName = EMCCountryPickerControllerDemoTests;
+			productReference = 90FE0BCF192F99660056E748 /* EMCCountryPickerControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90FE0BA3192F99650056E748 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CPC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Enrico M. Crisostomo";
+				TargetAttributes = {
+					90FE0BCE192F99660056E748 = {
+						TestTargetID = 90FE0BAA192F99650056E748;
+					};
+				};
+			};
+			buildConfigurationList = 90FE0BA6192F99650056E748 /* Build configuration list for PBXProject "EMCCountryPickerControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 90FE0BA2192F99650056E748;
+			productRefGroup = 90FE0BAC192F99650056E748 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90FE0BAA192F99650056E748 /* EMCCountryPickerControllerDemo */,
+				90FE0BCE192F99660056E748 /* EMCCountryPickerControllerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90FE0BA9192F99650056E748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BC5192F99660056E748 /* Main_iPad.storyboard in Resources */,
+				90FE0BCA192F99660056E748 /* Images.xcassets in Resources */,
+				90FE0BF0192F999E0056E748 /* countries.plist in Resources */,
+				90FE0BC2192F99660056E748 /* Main_iPhone.storyboard in Resources */,
+				90FE0BB9192F99650056E748 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FE0BCD192F99660056E748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BDB192F99660056E748 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90FE0BA7192F99650056E748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BF1192F999E0056E748 /* EMCCountry.m in Sources */,
+				90FE0BC8192F99660056E748 /* CPCViewController.m in Sources */,
+				90FE0BF3192F999E0056E748 /* EMCCountryPickerController.m in Sources */,
+				90FE0BF4192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m in Sources */,
+				90FE0BBB192F99650056E748 /* main.m in Sources */,
+				90FE0BF2192F999E0056E748 /* EMCCountryManager.m in Sources */,
+				90FE0BBF192F99650056E748 /* CPCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FE0BCB192F99660056E748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90FE0BDD192F99660056E748 /* EMCCountryPickerControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90FE0BD5192F99660056E748 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90FE0BAA192F99650056E748 /* EMCCountryPickerControllerDemo */;
+			targetProxy = 90FE0BD4192F99660056E748 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		90FE0BB7192F99650056E748 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90FE0BB8192F99650056E748 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90FE0BC0192F99660056E748 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90FE0BC1192F99660056E748 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		90FE0BC3192F99660056E748 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90FE0BC4192F99660056E748 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		90FE0BD9192F99660056E748 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90FE0BDA192F99660056E748 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90FE0BDE192F99660056E748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90FE0BDF192F99660056E748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		90FE0BE1192F99660056E748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90FE0BE2192F99660056E748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		90FE0BE4192F99660056E748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EMCCountryPickerControllerDemo.app/EMCCountryPickerControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EMCCountryPickerControllerDemoTests/EMCCountryPickerControllerDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		90FE0BE5192F99660056E748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EMCCountryPickerControllerDemo.app/EMCCountryPickerControllerDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo-Prefix.pch";
+				INFOPLIST_FILE = "EMCCountryPickerControllerDemoTests/EMCCountryPickerControllerDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90FE0BA6192F99650056E748 /* Build configuration list for PBXProject "EMCCountryPickerControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90FE0BDE192F99660056E748 /* Debug */,
+				90FE0BDF192F99660056E748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90FE0BE0192F99660056E748 /* Build configuration list for PBXNativeTarget "EMCCountryPickerControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90FE0BE1192F99660056E748 /* Debug */,
+				90FE0BE2192F99660056E748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		90FE0BE3192F99660056E748 /* Build configuration list for PBXNativeTarget "EMCCountryPickerControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90FE0BE4192F99660056E748 /* Debug */,
+				90FE0BE5192F99660056E748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90FE0BA3192F99650056E748 /* Project object */;
+}
