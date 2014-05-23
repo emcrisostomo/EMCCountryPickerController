@@ -9,6 +9,8 @@ ChangeLog
 	              exclusions.
     * ChangeLog:
       - Update.
+    * Classes/EMCCountry.h: Add methods to get a localised country name.
+    * Classes/EMCCountry.m: Add methods to get a localised country name.
     * Classes/EMCCountryDelegate.h: Refactor protocol.
 	* Classes/EMCCountryPickerController.h: Make delegate an IBOutlet.
 	* Classes/EMCCountryPickerController.m:
