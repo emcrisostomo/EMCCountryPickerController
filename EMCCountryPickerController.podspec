@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EMCCountryPickerController"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "EMCCountryPickerController is a view controller allowing users to choose and filter countries in a list."
 
   s.description  = <<-DESC
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/emcrisostomo/EMCCountryPickerController.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/emcrisostomo/EMCCountryPickerController.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -102,7 +102,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
