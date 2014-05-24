@@ -146,8 +146,6 @@
 		90610F9F192FA69300D69163 /* ES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DAB192FA69100D69163 /* ES@2x.png */; };
 		90610FA0192FA69300D69163 /* ET.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DAC192FA69100D69163 /* ET.png */; };
 		90610FA1192FA69300D69163 /* ET@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DAD192FA69100D69163 /* ET@2x.png */; };
-		90610FA2192FA69300D69163 /* EU.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DAE192FA69100D69163 /* EU.png */; };
-		90610FA3192FA69300D69163 /* EU@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DAF192FA69100D69163 /* EU@2x.png */; };
 		90610FA4192FA69300D69163 /* FI.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DB0192FA69100D69163 /* FI.png */; };
 		90610FA5192FA69300D69163 /* FI@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DB1192FA69100D69163 /* FI@2x.png */; };
 		90610FA6192FA69300D69163 /* FJ.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610DB2192FA69100D69163 /* FJ.png */; };
@@ -680,8 +678,6 @@
 		90610DAB192FA69100D69163 /* ES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ES@2x.png"; sourceTree = "<group>"; };
 		90610DAC192FA69100D69163 /* ET.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ET.png; sourceTree = "<group>"; };
 		90610DAD192FA69100D69163 /* ET@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ET@2x.png"; sourceTree = "<group>"; };
-		90610DAE192FA69100D69163 /* EU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EU.png; sourceTree = "<group>"; };
-		90610DAF192FA69100D69163 /* EU@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EU@2x.png"; sourceTree = "<group>"; };
 		90610DB0192FA69100D69163 /* FI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FI.png; sourceTree = "<group>"; };
 		90610DB1192FA69100D69163 /* FI@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FI@2x.png"; sourceTree = "<group>"; };
 		90610DB2192FA69100D69163 /* FJ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FJ.png; sourceTree = "<group>"; };
@@ -1241,8 +1237,6 @@
 				90610DAB192FA69100D69163 /* ES@2x.png */,
 				90610DAC192FA69100D69163 /* ET.png */,
 				90610DAD192FA69100D69163 /* ET@2x.png */,
-				90610DAE192FA69100D69163 /* EU.png */,
-				90610DAF192FA69100D69163 /* EU@2x.png */,
 				90610DB0192FA69100D69163 /* FI.png */,
 				90610DB1192FA69100D69163 /* FI@2x.png */,
 				90610DB2192FA69100D69163 /* FJ.png */,
@@ -1955,7 +1949,6 @@
 				90611035192FA69300D69163 /* MG@2x.png in Resources */,
 				90610FD9192FA69300D69163 /* HM@2x.png in Resources */,
 				9061105E192FA69300D69163 /* NF.png in Resources */,
-				90610FA3192FA69300D69163 /* EU@2x.png in Resources */,
 				90610F50192FA69300D69163 /* BO.png in Resources */,
 				90610F74192FA69300D69163 /* CM.png in Resources */,
 				90610FFF192FA69300D69163 /* KE@2x.png in Resources */,
@@ -2222,7 +2215,6 @@
 				90611078192FA69300D69163 /* PG.png in Resources */,
 				90611099192FA69300D69163 /* RW@2x.png in Resources */,
 				90611003192FA69300D69163 /* KH@2x.png in Resources */,
-				90610FA2192FA69300D69163 /* EU.png in Resources */,
 				906110BE192FA69300D69163 /* SX.png in Resources */,
 				90611052192FA69300D69163 /* MX.png in Resources */,
 				90611015192FA69300D69163 /* LA@2x.png in Resources */,

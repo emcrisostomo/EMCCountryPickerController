@@ -485,13 +485,6 @@
 		<key>it</key>
 		<string>Etiopia</string>
 	</dict>
-	<key>EU</key>
-	<dict>
-		<key>en</key>
-		<string>European Union</string>
-		<key>it</key>
-		<string>Unione Europea</string>
-	</dict>
 	<key>FI</key>
 	<dict>
 		<key>en</key>
