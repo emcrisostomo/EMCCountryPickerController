@@ -38,8 +38,13 @@
     if ([segue.identifier isEqualToString:@"openCountryPicker"])
     {
         EMCCountryPickerController *countryPicker = segue.destinationViewController;
+
+        // default values
+        countryPicker.showFlags = true;
         countryPicker.countryDelegate = self;
         countryPicker.drawFlagBorder = true;
+        countryPicker.flagBorderColor = [UIColor grayColor];
+        countryPicker.flagBorderWidth = 0.5f;
     }
 }
 

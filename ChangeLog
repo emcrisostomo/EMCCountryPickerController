@@ -7,11 +7,14 @@ ChangeLog
 
     * ChangeLog: Update.
     * Classes/EMCCountryPickerController.h:
+      - Add property showFlags.
       - Add property drawFlagBorder.
       - Add property flagBorderColor.
       - Add property flagBorderWidth.
-    * Classes/EMCCountryPickerController.m: Add the ability of drawing a flag
-      border using the specified properties.
+    * Classes/EMCCountryPickerController.m:
+      - Add the ability of drawing a flag border using the specified
+        properties.
+      - Add the possibility of hiding flags.
     * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
       - Update demo project.
     * README.md:

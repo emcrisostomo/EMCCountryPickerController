@@ -81,6 +81,12 @@ notification and dismisses the `EMCCountryPickerController` instance:
 }
 ```
 
+Showing and Hiding Flags
+------------------------
+
+Flags are shown by default and can be disabled using the property
+`BOOL showFlags`.
+
 Flag Borders
 ------------
 

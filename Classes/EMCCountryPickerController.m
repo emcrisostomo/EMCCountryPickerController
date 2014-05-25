@@ -35,7 +35,19 @@
     
     if (self)
     {
-        // Custom initialization
+        [self loadDefaults];
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self)
+    {
+        [self loadDefaults];
     }
     
     return self;
@@ -46,7 +58,6 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    [self loadDefaults];
     [self loadCountries];
     
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
@@ -108,6 +119,7 @@
 
 - (void)loadDefaults
 {
+    self.showFlags = true;
     self.drawFlagBorder = true;
     self.flagBorderColor = [UIColor grayColor];
     self.flagBorderWidth = 0.5f;
@@ -291,7 +303,10 @@
     }
   
     // Resize flag
-    cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
+    if (self.showFlags)
+    {
+        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
+    }
     
     // Draw a border around the flag view if requested
     if (self.drawFlagBorder)
