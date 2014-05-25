@@ -24,7 +24,6 @@ The table view presents the list of countries, sorted by name, in the current
 language of the user, if available, or in English.  A public domain image of
 a country's flag is shown at the left of the country name.
 
-![Main view](/Screenshots/main-view.png "Main View")
 ![Main view with flags](/Screenshots/main-view-with-flags.png "Main View with Flags")
 
 Prerequisites
@@ -86,6 +85,8 @@ Showing and Hiding Flags
 
 Flags are shown by default and can be disabled using the property
 `BOOL showFlags`.
+
+![Main view](/Screenshots/main-view.png "Main View")
 
 Flag Borders
 ------------
