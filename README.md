@@ -80,6 +80,14 @@ notification and dismisses the `EMCCountryPickerController` instance:
 }
 ```
 
+Searching Countries
+-------------------
+
+The view provides a search bar that can be used to filter countries _by name_,
+as shown in the following screenshot.
+
+![Main view](/Screenshots/main-view-search.png "Main View - Search")
+
 Showing and Hiding Flags
 ------------------------
 
