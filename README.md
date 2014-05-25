@@ -81,6 +81,18 @@ notification and dismisses the `EMCCountryPickerController` instance:
 }
 ```
 
+Flag Borders
+------------
+
+By default a grey .5 border is drawn around a flag in order to improve its
+visual appearance over the default white background.  The border can be
+configured using the following properties:
+
+  * `BOOL drawFlagBorder`: enables the flag border. Defaults to `YES`.
+  * `UIColor *flagBorderColor`: sets the border color. Defaults to
+    `[UIColor grayColor]`.
+  * `CGFloat flagBorderWidth`: sets the border width. Defaults to `0.5f`.
+
 Localised Country Names
 -----------------------
 

@@ -16,5 +16,8 @@
 
 @property (weak) IBOutlet id<EMCCountryDelegate> countryDelegate;
 @property NSLocale *countryNameDisplayLocale;
+@property BOOL drawFlagBorder;
+@property UIColor *flagBorderColor;
+@property CGFloat flagBorderWidth;
 
 @end

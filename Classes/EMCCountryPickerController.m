@@ -46,6 +46,7 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    [self loadDefaults];
     [self loadCountries];
     
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
@@ -103,6 +104,13 @@
                                                          attribute:NSLayoutAttributeBottom
                                                         multiplier:1
                                                           constant:0]];
+}
+
+- (void)loadDefaults
+{
+    self.drawFlagBorder = true;
+    self.flagBorderColor = [UIColor grayColor];
+    self.flagBorderWidth = 0.5f;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -285,6 +293,13 @@
     // Resize flag
     cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
     
+    // Draw a border around the flag view if requested
+    if (self.drawFlagBorder)
+    {
+        cell.imageView.layer.borderColor = self.flagBorderColor.CGColor;
+        cell.imageView.layer.borderWidth = self.flagBorderWidth;
+    }
+
     if (_selectedCountry && [_selectedCountry isEqual:currentCountry])
     {
         NSLog(@"Selection is %ld:%ld.", (long)tableView.indexPathForSelectedRow.section, (long)tableView.indexPathForSelectedRow.row);

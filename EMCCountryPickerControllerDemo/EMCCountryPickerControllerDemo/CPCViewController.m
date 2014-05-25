@@ -39,6 +39,7 @@
     {
         EMCCountryPickerController *countryPicker = segue.destinationViewController;
         countryPicker.countryDelegate = self;
+        countryPicker.drawFlagBorder = true;
     }
 }
 

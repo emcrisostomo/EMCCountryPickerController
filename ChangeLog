@@ -1,14 +1,29 @@
 ChangeLog
 *********
 
+2014-05-25  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
+    release: stable minor release 1.1.0:
+
+    * ChangeLog: Update.
+    * Classes/EMCCountryPickerController.h:
+      - Add property drawFlagBorder.
+      - Add property flagBorderColor.
+      - Add property flagBorderWidth.
+    * Classes/EMCCountryPickerController.m: Add the ability of drawing a flag
+      border using the specified properties.
+    * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
+      - Update demo project.
+    * README.md:
+      - Update usage adding information about flag borders.
+
 2014-05-23  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
 	release: stable major release 1.0.0:
 
 	* .gitignore: Update .gitignore with recommended Objective C and XCode
-	              exclusions.
-    * ChangeLog:
-      - Update.
+      exclusions.
+    * ChangeLog: Update.
     * Classes/EMCCountry.h: Add methods to get a localised country name.
     * Classes/EMCCountry.m: Add methods to get a localised country name.
     * Classes/EMCCountryDelegate.h: Refactor protocol.
