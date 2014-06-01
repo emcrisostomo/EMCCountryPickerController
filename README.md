@@ -103,6 +103,29 @@ as shown in the following screenshot.
 
 ![Main view](/Screenshots/main-view-search.png "Main View - Search")
 
+Selecting the Set of Countries to Be Displayed
+----------------------------------------------
+
+Sometimes users need to restrict the set of countries to choose from and that
+can be accomplished using the property
+
+```
+@property (copy) NSSet *availableCountryCodes;
+```
+
+Users can pass the set of [ISO 3166-1 alpha-2][iso31662] country codes of the
+countries to be shown by this controller.  If a country code is not valid the
+controller fails throwing an exception.
+
+The following code fragment restricts the set of displayed countries to France,
+Italy, Spain and United States, as shown in the following screenshot.
+
+```
+countryPicker.availableCountryCodes = [NSSet setWithObjects:@"IT", @"ES", @"US", @"FR", nil];
+```
+
+![Main view](/Screenshots/main-view-subset.png "Main View - Subset of Countries")
+
 Showing and Hiding Flags
 ------------------------
 
