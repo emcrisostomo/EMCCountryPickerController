@@ -115,6 +115,7 @@ The `EMCCountryPickerController` library ships with localised country names in:
 
   * English (en).
   * Italian (it).
+  * Spanish (es).
 
 Support for additional languages can be easily added by updating the
 `countries.plist` file.
