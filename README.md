@@ -15,6 +15,7 @@ Features
 This library provides the following features:
 
   * A country can be selected from a list in a table view.
+  * The list can be searched using a search bar.
   * Country flags are displayed in the image view of a table cell and can
     optionally be hidden.
   * The flag border color and size can be customised and optionally hidden.
