@@ -136,11 +136,21 @@ Demo Code
 A demo project named `EMCCountryPickerControllerDemo` using a storyboard and
 highlighting the library major features is shipped with the library code.
 
-Getting the Software
---------------------
+Installation with CocoaPods
+---------------------------
+
+`EMCCountryPickerController` is available through [CocoaPods][cocoapods] and a
+dependency to it can be added to your Podfile:
+
+    pod 'EMCCountryPickerController' ~> '1.0'
+
+[cocoapods]: http://cocoapods.org
+
+Build the Software
+------------------
 
 The recommended way to get the sources of `EMCCountryPickerController` in order
-to build it on your system is getting a [release tarball][release]. 
+to build it on your system is getting a [release tarball][release].
 
 [release]: https://github.com/emcrisostomo/EMCCountryPickerController/releases
 
