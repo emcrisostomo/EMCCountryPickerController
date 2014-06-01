@@ -327,38 +327,38 @@
     _selectedCountry = chosenCountry;
 }
 
+- (NSArray *)filterAvailableCountries:(NSSet *)countryCodes
+{
+    EMCCountryManager *countryManager = [EMCCountryManager countryManager];
+    NSMutableArray *countries = [[NSMutableArray alloc] initWithCapacity:[countryCodes count]];
+    
+    for (id code in self.availableCountryCodes)
+    {
+        if ([countryManager existsCountryWithCode:code])
+        {
+            [countries addObject:[countryManager countryWithCode:code]];
+        }
+        else
+        {
+            [NSException raise:@"Unknown country code"
+                        format:@"Unknown country code %@", code];
+        }
+    }
+    
+    return countries;
+}
+
 - (void)loadCountries
 {
-    NSArray *allCountries = [[EMCCountryManager countryManager] allCountries];
     NSArray *availableCountries;
     
     if (self.availableCountryCodes)
     {
-        NSMutableSet *countryCodesToFilter = [NSMutableSet setWithSet:self.availableCountryCodes];
-        
-        NSMutableArray *filteredCountries = [[NSMutableArray alloc] init];
-        
-        for (EMCCountry *country in allCountries)
-        {
-            if ([countryCodesToFilter containsObject:[country countryCode]])
-            {
-                [filteredCountries addObject:country];
-                [countryCodesToFilter removeObject:[country countryCode]];
-            }
-        }
-        
-        availableCountries = filteredCountries;
-        
-        // Fail if unknown country codes were passed.
-        if ([countryCodesToFilter count])
-        {
-            [NSException raise:@"Unknown country code"
-                        format:@"%d unknown country code(s) were passed: %@.", [countryCodesToFilter count], [[countryCodesToFilter allObjects] componentsJoinedByString:@", "]];
-        }
+        availableCountries = [self filterAvailableCountries:self.availableCountryCodes];
     }
     else
     {
-        availableCountries = allCountries;
+        availableCountries = [[EMCCountryManager countryManager] allCountries];
     }
     
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"countryName" ascending:YES];
