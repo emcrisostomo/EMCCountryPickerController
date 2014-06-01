@@ -4,13 +4,27 @@ EMCCountryPickerController
 `EMCCountryPickerController` is a view controller that allow users to choose
 a country from a searchable list.  The available countries are taken from the
 [ISO 3166-1 standard][iso3166], whose [ISO 3166-1 alpha-2][iso31662] two-letter
-country codes are used internally by the controller implementation.
+country codes are used by the API to represent countries.
 
 [iso3166]: http://en.wikipedia.org/wiki/ISO_3166
 [iso31662]: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
 Features
 --------
+
+This library provides the following features:
+
+  * A country can be selected from a list in a table view.
+  * Country flags are displayed in the image view of a table cell and can
+    optionally be hidden.
+  * The flag border color and size can be customised and optionally hidden.
+  * All the countries assigned a [ISO 3166-1 alpha-2][iso31662] two-letter code
+    are available.
+  * The list of countries presented by the controller can be filtered.
+  * The following localisations are available:
+    - English (en).
+    - Italian (it).
+    - Spanish (es).
 
 The anatomy of the view presented by `EMCCountryPickerController` is the
 following:
