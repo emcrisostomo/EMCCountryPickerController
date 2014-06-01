@@ -151,11 +151,6 @@
     }
 }
 
-- (void)chooseCountry:(EMCCountry *)chosenCountry;
-{
-    _selectedCountry = chosenCountry;
-}
-
 - (void)loadView
 {
     rootView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -196,6 +191,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table View Management
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -243,6 +240,61 @@
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
+    
+    EMCCountry *currentCountry;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        currentCountry = [_countrySearchResults objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        currentCountry = [_countries objectAtIndex:indexPath.row];
+    }
+    
+    NSString *countryCode = [currentCountry countryCode];
+    
+    if (self.countryNameDisplayLocale)
+    {
+        cell.textLabel.text = [currentCountry countryNameWithLocale:self.countryNameDisplayLocale];
+    }
+    else
+    {
+        cell.textLabel.text = [currentCountry countryName];
+    }
+    
+    // Resize flag
+    if (self.showFlags)
+    {
+        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
+    }
+    
+    // Draw a border around the flag view if requested
+    if (self.drawFlagBorder)
+    {
+        cell.imageView.layer.borderColor = self.flagBorderColor.CGColor;
+        cell.imageView.layer.borderWidth = self.flagBorderWidth;
+    }
+    
+    if (_selectedCountry && [_selectedCountry isEqual:currentCountry])
+    {
+        NSLog(@"Selection is %ld:%ld.", (long)tableView.indexPathForSelectedRow.section, (long)tableView.indexPathForSelectedRow.row);
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    // Configure the cell...
+    return cell;
+}
+
+#pragma mark - Search Box Management
+
 - (void)filterContentForSearchText:(NSString*)searchText
                              scope:(NSString*)scope
 {
@@ -268,65 +320,50 @@
     [self loadCountrySelection];
 }
 
-- (void)loadCountries
+#pragma mark - Country Management
+
+- (void)chooseCountry:(EMCCountry *)chosenCountry;
 {
-    NSArray * allCountries = [[EMCCountryManager countryManager] allCountries];
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"countryName" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObjects:nameDescriptor, nil];
-    _countries = [allCountries sortedArrayUsingDescriptors:descriptors];
+    _selectedCountry = chosenCountry;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)loadCountries
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
-
-    EMCCountry *currentCountry;
+    NSArray *allCountries = [[EMCCountryManager countryManager] allCountries];
+    NSArray *availableCountries;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    if (self.availableCountryCodes)
     {
-        currentCountry = [_countrySearchResults objectAtIndex:indexPath.row];
+        NSMutableSet *countryCodesToFilter = [NSMutableSet setWithSet:self.availableCountryCodes];
+        
+        NSMutableArray *filteredCountries = [[NSMutableArray alloc] init];
+        
+        for (EMCCountry *country in allCountries)
+        {
+            if ([countryCodesToFilter containsObject:[country countryCode]])
+            {
+                [filteredCountries addObject:country];
+                [countryCodesToFilter removeObject:[country countryCode]];
+            }
+        }
+        
+        availableCountries = filteredCountries;
+        
+        // Fail if unknown country codes were passed.
+        if ([countryCodesToFilter count])
+        {
+            [NSException raise:@"Unknown country code"
+                        format:@"%d unknown country code(s) were passed: %@.", [countryCodesToFilter count], [[countryCodesToFilter allObjects] componentsJoinedByString:@", "]];
+        }
     }
     else
     {
-        currentCountry = [_countries objectAtIndex:indexPath.row];
+        availableCountries = allCountries;
     }
     
-    NSString *countryCode = [currentCountry countryCode];
-
-    if (self.countryNameDisplayLocale)
-    {
-        cell.textLabel.text = [currentCountry countryNameWithLocale:self.countryNameDisplayLocale];
-    }
-    else
-    {
-        cell.textLabel.text = [currentCountry countryName];
-    }
-  
-    // Resize flag
-    if (self.showFlags)
-    {
-        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
-    }
-    
-    // Draw a border around the flag view if requested
-    if (self.drawFlagBorder)
-    {
-        cell.imageView.layer.borderColor = self.flagBorderColor.CGColor;
-        cell.imageView.layer.borderWidth = self.flagBorderWidth;
-    }
-
-    if (_selectedCountry && [_selectedCountry isEqual:currentCountry])
-    {
-        NSLog(@"Selection is %ld:%ld.", (long)tableView.indexPathForSelectedRow.section, (long)tableView.indexPathForSelectedRow.row);
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else
-    {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
-    // Configure the cell...
-    return cell;
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"countryName" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObjects:nameDescriptor, nil];
+    _countries = [availableCountries sortedArrayUsingDescriptors:descriptors];
 }
 
 @end

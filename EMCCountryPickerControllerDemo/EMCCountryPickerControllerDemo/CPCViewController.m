@@ -11,6 +11,8 @@
 
 @interface CPCViewController ()
 
+@property (weak, nonatomic) IBOutlet UISwitch *allCountriesSwitch;
+
 @end
 
 @implementation CPCViewController
@@ -45,6 +47,11 @@
         countryPicker.drawFlagBorder = true;
         countryPicker.flagBorderColor = [UIColor grayColor];
         countryPicker.flagBorderWidth = 0.5f;
+
+        if (![self.allCountriesSwitch isOn])
+        {
+            countryPicker.availableCountryCodes = [NSSet setWithObjects:@"IT", @"ES", @"US", @"FR", nil];
+        }
     }
 }
 
