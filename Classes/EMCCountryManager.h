@@ -17,5 +17,6 @@
 - (NSUInteger)numberOfCountries;
 - (NSArray *)countryCodes;
 - (NSArray *)allCountries;
+- (BOOL)existsCountryWithCode:(NSString *)code;
 
 @end

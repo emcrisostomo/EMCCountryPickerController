@@ -70,6 +70,11 @@ static EMCCountryManager *_countryManager;
                                localizedNames:[countryDict objectForKey:code]];
 }
 
+- (BOOL)existsCountryWithCode:(NSString *)code
+{
+    return [countryKeysArr containsObject:code];
+}
+
 - (NSArray *)countryCodes
 {
     return [NSArray arrayWithArray:countryKeysArr];
