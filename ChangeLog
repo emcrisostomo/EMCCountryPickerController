@@ -3,19 +3,31 @@ ChangeLog
 
 2014-06-05  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
-    release: stable minor release 1.1.0:
+    release: stable minor release 1.3.0:
 
     * ChangeLog: Update.
     * Classes/EMCCountryPickerController.h:
       - Add property flagSize.
     * Classes/EMCCountryPickerController.m:
       - Add the possibility of resizing flags.
+    * EMCCountryPickerController.podspec: Bump v. 1.3.0.
     * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
       - Add the possibility of using small flags in the demo project.
     * README.md:
       - Update usage adding information about flag resizing.
     * Screenshots/main-view-small-flags.png: Add screenshot of the controller
       displaying small flags.
+
+2014-06-01  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
+    release: stable minor release 1.2.0:
+
+    * ChangeLog: Update.
+    * EMCCountryPickerController.podspec: Bump v. 1.2.0.
+    * README.md:
+      - Update features to reflect the addition of the Spanish (es)
+        localisation.
+    * countries.plist: Add Spanish (es) localization.
 
 2014-05-25  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
@@ -31,6 +43,7 @@ ChangeLog
       - Add the ability of drawing a flag border using the specified
         properties.
       - Add the possibility of hiding flags.
+    * EMCCountryPickerController.podspec: Bump v. 1.1.0.
     * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
       - Update demo project.
     * README.md:
