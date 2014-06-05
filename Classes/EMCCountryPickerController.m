@@ -14,6 +14,8 @@
     #error This class requires ARC support to be enabled.
 #endif
 
+static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
+
 @interface EMCCountryPickerController ()
 
 @end
@@ -58,6 +60,7 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    [self validateSettings];
     [self loadCountries];
     
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
@@ -115,14 +118,6 @@
                                                          attribute:NSLayoutAttributeBottom
                                                         multiplier:1
                                                           constant:0]];
-}
-
-- (void)loadDefaults
-{
-    self.showFlags = true;
-    self.drawFlagBorder = true;
-    self.flagBorderColor = [UIColor grayColor];
-    self.flagBorderWidth = 0.5f;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -190,6 +185,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Settings Management
+
+
+- (void)loadDefaults
+{
+    self.showFlags = true;
+    self.drawFlagBorder = true;
+    self.flagBorderColor = [UIColor grayColor];
+    self.flagBorderWidth = 0.5f;
+    self.flagSize = 40.0f;
+}
+
+- (void)validateSettings
+{
+    if (self.flagSize <= 0)
+    {
+        [NSException raise:@"Invalid flag size." format:@"Invalid flag size: %f.", self.flagSize];
+    }
 }
 
 #pragma mark - Table View Management
@@ -269,7 +284,7 @@
     // Resize flag
     if (self.showFlags)
     {
-        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(40, 40)];
+        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(self.flagSize, self.flagSize)];
     }
     
     // Draw a border around the flag view if requested
@@ -288,9 +303,18 @@
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    
-    // Configure the cell...
+
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.flagSize < tableView.rowHeight)
+    {
+        return MAX(self.flagSize, kEMCCountryCellControllerMinCellHeight);
+    }
+    
+    return MAX(tableView.rowHeight, self.flagSize);
 }
 
 #pragma mark - Search Box Management

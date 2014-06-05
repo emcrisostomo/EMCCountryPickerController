@@ -19,6 +19,7 @@
 @property NSLocale *countryNameDisplayLocale;
 @property BOOL showFlags;
 @property BOOL drawFlagBorder;
+@property CGFloat flagSize;
 @property UIColor *flagBorderColor;
 @property CGFloat flagBorderWidth;
 
