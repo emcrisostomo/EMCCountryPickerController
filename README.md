@@ -16,8 +16,9 @@ This library provides the following features:
 
   * A country can be selected from a list in a table view.
   * The list can be searched using a search bar.
-  * Country flags are displayed in the image view of a table cell and can
+  * Country flags are displayed in the image view of a table cell and they can
     optionally be hidden.
+  * The flag size can be customised.
   * The flag border color and size can be customised and optionally hidden.
   * All the countries assigned a [ISO 3166-1 alpha-2][iso31662] two-letter code
     are available.
@@ -133,6 +134,17 @@ Flags are shown by default and can be disabled using the property
 `BOOL showFlags`.
 
 ![Main view](/Screenshots/main-view.png "Main View")
+
+Flag Size
+---------
+
+Flag size can be customised using the `flagSize` property:
+
+    countryPicker.flagSize = 20;
+
+The table view cell row height will be adjusted accordingly.
+
+![Main view](/Screenshots/main-view-small-flags.png "Main View - Small Flags")
 
 Flag Borders
 ------------

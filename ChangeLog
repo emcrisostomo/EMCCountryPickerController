@@ -1,6 +1,22 @@
 ChangeLog
 *********
 
+2014-06-05  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
+    release: stable minor release 1.1.0:
+
+    * ChangeLog: Update.
+    * Classes/EMCCountryPickerController.h:
+      - Add property flagSize.
+    * Classes/EMCCountryPickerController.m:
+      - Add the possibility of resizing flags.
+    * EMCCountryPickerControllerDemo/EMCCountryPickerControllerDemo/CPCViewController.m:
+      - Add the possibility of using small flags in the demo project.
+    * README.md:
+      - Update usage adding information about flag resizing.
+    * Screenshots/main-view-small-flags.png: Add screenshot of the controller
+      displaying small flags.
+
 2014-05-25  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
     release: stable minor release 1.1.0:
