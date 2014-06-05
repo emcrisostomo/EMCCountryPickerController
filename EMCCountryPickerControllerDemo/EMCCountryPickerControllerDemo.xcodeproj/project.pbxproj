@@ -506,6 +506,7 @@
 		90611109192FA69300D69163 /* ZM@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610F15192FA69300D69163 /* ZM@2x.png */; };
 		9061110A192FA69300D69163 /* ZW.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610F16192FA69300D69163 /* ZW.png */; };
 		9061110B192FA69300D69163 /* ZW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610F17192FA69300D69163 /* ZW@2x.png */; };
+		906FC5AB1940CE2C003A8D4A /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 906FC5AA1940CE2C003A8D4A /* countries.plist */; };
 		90FE0BAF192F99650056E748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BAE192F99650056E748 /* Foundation.framework */; };
 		90FE0BB1192F99650056E748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB0192F99650056E748 /* CoreGraphics.framework */; };
 		90FE0BB3192F99650056E748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB2192F99650056E748 /* UIKit.framework */; };
@@ -521,7 +522,6 @@
 		90FE0BD3192F99660056E748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FE0BB2192F99650056E748 /* UIKit.framework */; };
 		90FE0BDB192F99660056E748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BD9192F99660056E748 /* InfoPlist.strings */; };
 		90FE0BDD192F99660056E748 /* EMCCountryPickerControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BDC192F99660056E748 /* EMCCountryPickerControllerDemoTests.m */; };
-		90FE0BF0192F999E0056E748 /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90FE0BE6192F999D0056E748 /* countries.plist */; };
 		90FE0BF1192F999E0056E748 /* EMCCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BE8192F999E0056E748 /* EMCCountry.m */; };
 		90FE0BF2192F999E0056E748 /* EMCCountryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BEB192F999E0056E748 /* EMCCountryManager.m */; };
 		90FE0BF3192F999E0056E748 /* EMCCountryPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE0BED192F999E0056E748 /* EMCCountryPickerController.m */; };
@@ -1040,6 +1040,7 @@
 		90610F17192FA69300D69163 /* ZW@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZW@2x.png"; sourceTree = "<group>"; };
 		9061110C192FB0D900D69163 /* ChangeLog */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChangeLog; path = ../ChangeLog; sourceTree = "<group>"; };
 		9061110D192FB25600D69163 /* EMCCountryPickerController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = EMCCountryPickerController.podspec; path = ../EMCCountryPickerController.podspec; sourceTree = "<group>"; };
+		906FC5AA1940CE2C003A8D4A /* countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = countries.plist; path = ../../Resources/countries.plist; sourceTree = "<group>"; };
 		90FE0BAB192F99650056E748 /* EMCCountryPickerControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCCountryPickerControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FE0BAE192F99650056E748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90FE0BB0192F99650056E748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1060,7 +1061,6 @@
 		90FE0BD8192F99660056E748 /* EMCCountryPickerControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMCCountryPickerControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		90FE0BDA192F99660056E748 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		90FE0BDC192F99660056E748 /* EMCCountryPickerControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMCCountryPickerControllerDemoTests.m; sourceTree = "<group>"; };
-		90FE0BE6192F999D0056E748 /* countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = countries.plist; path = ../../Classes/countries.plist; sourceTree = "<group>"; };
 		90FE0BE7192F999E0056E748 /* EMCCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountry.h; path = ../../Classes/EMCCountry.h; sourceTree = "<group>"; };
 		90FE0BE8192F999E0056E748 /* EMCCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMCCountry.m; path = ../../Classes/EMCCountry.m; sourceTree = "<group>"; };
 		90FE0BE9192F999E0056E748 /* EMCCountryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMCCountryDelegate.h; path = ../../Classes/EMCCountryDelegate.h; sourceTree = "<group>"; };
@@ -1639,15 +1639,15 @@
 		90FE0BB4192F99650056E748 /* EMCCountryPickerControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				90FE0BF5192F99A20056E748 /* EMCCountryPickerController */,
-				90FE0BE6192F999D0056E748 /* countries.plist */,
+				906FC5AA1940CE2C003A8D4A /* countries.plist */,
 				90FE0BBD192F99650056E748 /* CPCAppDelegate.h */,
 				90FE0BBE192F99650056E748 /* CPCAppDelegate.m */,
-				90FE0BC0192F99660056E748 /* Main_iPhone.storyboard */,
-				90FE0BC3192F99660056E748 /* Main_iPad.storyboard */,
 				90FE0BC6192F99660056E748 /* CPCViewController.h */,
 				90FE0BC7192F99660056E748 /* CPCViewController.m */,
+				90FE0BF5192F99A20056E748 /* EMCCountryPickerController */,
 				90FE0BC9192F99660056E748 /* Images.xcassets */,
+				90FE0BC3192F99660056E748 /* Main_iPad.storyboard */,
+				90FE0BC0192F99660056E748 /* Main_iPhone.storyboard */,
 				90FE0BB5192F99650056E748 /* Supporting Files */,
 			);
 			path = EMCCountryPickerControllerDemo;
@@ -2068,6 +2068,7 @@
 				90610F5B192FA69300D69163 /* BV@2x.png in Resources */,
 				90611080192FA69300D69163 /* PM.png in Resources */,
 				90610F20192FA69300D69163 /* AI.png in Resources */,
+				906FC5AB1940CE2C003A8D4A /* countries.plist in Resources */,
 				90610F98192FA69300D69163 /* EG.png in Resources */,
 				90610FB0192FA69300D69163 /* GA.png in Resources */,
 				906110EE192FA69300D69163 /* UZ.png in Resources */,
@@ -2195,7 +2196,6 @@
 				90611031192FA69300D69163 /* ME@2x.png in Resources */,
 				90611039192FA69300D69163 /* MK@2x.png in Resources */,
 				90611100192FA69300D69163 /* WS.png in Resources */,
-				90FE0BF0192F999E0056E748 /* countries.plist in Resources */,
 				90611019192FA69300D69163 /* LC@2x.png in Resources */,
 				90610FF1192FA69300D69163 /* IR@2x.png in Resources */,
 				90610FAA192FA69300D69163 /* FM.png in Resources */,

@@ -3,6 +3,15 @@ ChangeLog
 
 2014-06-05  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
 
+    release: stable micro release 1.3.1:
+
+    * ChangeLog: Update.
+    * EMCCountryPickerController.podspec:
+      - Bump v. 1.3.1.
+      - Fix wrong resource inclusions.
+
+2014-06-05  Enrico M. Crisostomo  <enrico.m.crisostomo@gmail.com>
+
     release: stable minor release 1.3.0:
 
     * ChangeLog: Update.
