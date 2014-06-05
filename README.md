@@ -144,7 +144,8 @@ Flag size can be customised using the `flagSize` property:
 
 The table view cell row height will be adjusted accordingly.
 
-![Main view](/Screenshots/main-view-small-flags.png "Main View - Small Flags")
+![Main view](/Screenshots/main-view-small-flags.png "Main View - Small Flags (Resized to Fit in 20x20)")
+![Main view](/Screenshots/main-view-big-flags.png "Main View - Big Flags (Resized to Fit in 80x80)")
 
 Flag Borders
 ------------
