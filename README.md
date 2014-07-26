@@ -46,8 +46,7 @@ Prerequisites
 -------------
 
 This library has been built with XCode 5.1.1 using iOS 7.1 as a build target.
-The library is expected to work down to iOS 6 but it has not been tested with
-any target older than iOS 7.0.
+This library requires iOS >= 7.
 
 This library requires [ARC][arc] (_Automatic Reference Counting_) and
 compilation will fail if ARC support is not available.
