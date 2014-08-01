@@ -1,6 +1,6 @@
 //
 //  EMCChooseCountryViewControllerManual.m
-//  EMCCountryPickerController 
+//  EMCCountryPickerController
 //
 //  Created by Enrico Maria Crisostomo on 12/05/14.
 //  Copyright (c) 2014 Enrico M. Crisostomo. All rights reserved.
@@ -11,7 +11,7 @@
 #import "EMCCountryManager.h"
 
 #if !__has_feature(objc_arc)
-    #error This class requires ARC support to be enabled.
+#error This class requires ARC support to be enabled.
 #endif
 
 static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
@@ -58,18 +58,31 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Do any additional setup after loading the view.
     [self validateSettings];
     [self loadCountries];
     
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                         attribute:NSLayoutAttributeTop
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self.topLayoutGuide
-                                                         attribute:NSLayoutAttributeBottom
-                                                        multiplier:1
-                                                          constant:0]];
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+    {
+        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
+                                                             attribute:NSLayoutAttributeTop
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.topLayoutGuide
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1
+                                                              constant:0]];
+    }
+    else
+    {
+        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
+                                                             attribute:NSLayoutAttributeTop
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1
+                                                              constant:0]];
+    }
     
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
                                                          attribute:NSLayoutAttributeCenterX
@@ -94,7 +107,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
                                                          attribute:NSLayoutAttributeBottom
                                                         multiplier:1
                                                           constant:0]];
-
+    
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
                                                          attribute:NSLayoutAttributeTrailing
                                                          relatedBy:NSLayoutRelationEqual
@@ -102,7 +115,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
                                                          attribute:NSLayoutAttributeTrailing
                                                         multiplier:1
                                                           constant:0]];
-
+    
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
                                                          attribute:NSLayoutAttributeLeading
                                                          relatedBy:NSLayoutRelationEqual
@@ -110,14 +123,27 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
                                                          attribute:NSLayoutAttributeLeading
                                                         multiplier:1
                                                           constant:0]];
-
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide
-                                                         attribute:NSLayoutAttributeTop
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:countryTable
-                                                         attribute:NSLayoutAttributeBottom
-                                                        multiplier:1
-                                                          constant:0]];
+    
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+    {
+        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide
+                                                             attribute:NSLayoutAttributeTop
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:countryTable
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1
+                                                              constant:0]];
+    }
+    else
+    {
+        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.view
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:countryTable
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1
+                                                              constant:0]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -151,7 +177,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     rootView = [[UIView alloc] initWithFrame:CGRectZero];
     [rootView setBackgroundColor:[UIColor whiteColor]];
     rootView.autoresizesSubviews = YES;
-
+    
     countryTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, [rootView frame].size.height)];
     [countryTable setTranslatesAutoresizingMaskIntoConstraints:NO];
     countryTable.dataSource = self;
@@ -164,7 +190,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     [searchBar sizeToFit];
     
     [rootView addSubview:searchBar];
-
+    
     displayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar
                                                           contentsController:self];
     displayController.delegate = self;
@@ -173,9 +199,9 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     
     [[[self searchDisplayController] searchResultsTableView] registerClass:[UITableViewCell class]
                                                     forCellReuseIdentifier:@"identifier"];
-
+    
     if ([self searchDisplayController] == nil) NSLog(@"Search DC is nil");
-
+    
     [rootView addSubview:countryTable];
     
     self.view = rootView;
@@ -303,7 +329,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-
+    
     return cell;
 }
 
