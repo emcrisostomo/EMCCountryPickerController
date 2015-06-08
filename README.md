@@ -193,7 +193,7 @@ Installation with CocoaPods
 `EMCCountryPickerController` is available through [CocoaPods][cocoapods] and a
 dependency to it can be added to your Podfile:
 
-    pod 'EMCCountryPickerController' ~> '1.0'
+    pod 'EMCCountryPickerController', ~> '1.0'
 
 [cocoapods]: http://cocoapods.org
 
