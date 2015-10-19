@@ -273,6 +273,10 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
         NSLog(@"Delegate is not set, the view controller will not be dismissed.");
     }
     
+    if (self.onCountrySelected) {
+        self.onCountrySelected(_selectedCountry);
+    }
+    
     [self.countryDelegate countryController:self didSelectCountry:_selectedCountry];
 }
 
