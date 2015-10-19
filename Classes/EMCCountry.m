@@ -12,13 +12,10 @@
 static NSString * const kDefaultLocale = @"en";
 
 @implementation EMCCountry
-{
-    NSDictionary *_names;
-}
 
-+ (instancetype)countryWithCountryCode:(NSString *)code localizedNames:(NSDictionary *)names
++ (instancetype)countryWithCountryCode:(NSString *)code
 {
-    return [[EMCCountry alloc] initWithCountryCode:code localizedNames:names];
+    return [[EMCCountry alloc] initWithCountryCode:code];
 }
 
 - (instancetype)init
@@ -30,14 +27,13 @@ static NSString * const kDefaultLocale = @"en";
     @throw exception;
 }
 
-- (instancetype)initWithCountryCode:(NSString *)code localizedNames:(NSDictionary *)names
+- (instancetype)initWithCountryCode:(NSString *)code
 {
     self = [super init];
     
     if (self)
     {
         _countryCode = code;
-        _names = [NSDictionary dictionaryWithDictionary:names];
     }
     
     return self;
@@ -68,26 +64,17 @@ static NSString * const kDefaultLocale = @"en";
 
 - (NSString *)countryNameWithLocale:(NSLocale *)locale
 {
-    NSString *localisedName = _names[locale.localeIdentifier];
     
-    if (localisedName)
-    {
-        return localisedName;
-    }
-    
-    return _names[kDefaultLocale];
+    NSString *localisedCountryName = [locale
+                                     displayNameForKey:NSLocaleCountryCode value:self.countryCode];
+
+    return localisedCountryName;
 }
 
 - (NSString *)countryNameWithLocaleIdentifier:(NSString *)localeIdentifier
 {
-    NSString *localisedName = _names[localeIdentifier];
-    
-    if (localisedName)
-    {
-        return localisedName;
-    }
-    
-    return _names[kDefaultLocale];
+    NSLocale* locale = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
+    return [self countryNameWithLocale:locale];
 }
 
 @end

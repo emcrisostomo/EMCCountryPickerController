@@ -23,10 +23,7 @@ This library provides the following features:
   * All the countries assigned a [ISO 3166-1 alpha-2][iso31662] two-letter code
     are available.
   * The list of countries presented by the controller can be filtered.
-  * The following localisations are available:
-    - English (en).
-    - Italian (it).
-    - Spanish (es).
+  * Countries are localised through the NSLocale API methods
 
 The anatomy of the view presented by `EMCCountryPickerController` is the
 following:
@@ -161,25 +158,7 @@ configured using the following properties:
 Localised Country Names
 -----------------------
 
-The `EMCCountryPickerController` library ships with localised country names in:
-
-  * English (en).
-  * Italian (it).
-  * Spanish (es).
-
-Support for additional languages can be easily added by updating the
-`countries.plist` file.
-
-The current implementation selects the locale using the following algorithm:
-
-  * If the `countryNameDisplayLocale` property of the view controller instance
-    is set and not null, then a country name in the specified locale will be
-    requested.
-  * If a translation in the `countryNameDisplayLocale` locale is not available
-    or it is null, then a translation in the first preferred locale will be
-    requested, where the preferred locale is obtained using
-    `[[NSLocale preferredLanguages] objectAtIndex:0]`.
-  * If a translation in the preferred locale is not available, use English.
+The `EMCCountryPickerController` localises country names employing the NSLocale API methods.
 
 Demo Code
 ---------
