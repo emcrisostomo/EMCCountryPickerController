@@ -416,4 +416,14 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     _countries = [availableCountries sortedArrayUsingDescriptors:descriptors];
 }
 
+-(void)dealloc
+{
+    countryTable.delegate = nil;
+    countryTable.dataSource = nil;
+    searchBar.delegate = nil;
+    
+    displayController.searchResultsDelegate = nil;
+    displayController.searchResultsDataSource = nil;
+}
+
 @end
