@@ -46,16 +46,15 @@ static EMCCountryManager *_countryManager;
 
 - (void)loadCountries
 {
-    NSString *countriesPath = [[NSBundle mainBundle] pathForResource:@"countries"
-                                                              ofType:@"plist"];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    
+    NSString *countriesPath = [bundle pathForResource:@"EMCCountryPickerController.bundle/countries" ofType:@"plist"];
     
     countriesArray = [NSArray arrayWithContentsOfFile:countriesPath];
     
-    
     if (!countriesArray)
     {
-        [NSException raise:@"Countries could not be loaded"
-                    format:@"Country array is null: [%@]", countriesArray];
+        [NSException raise:@"Countries could not be loaded" format:@"Country array is null: [%@]", countriesArray];
     }
 }
 

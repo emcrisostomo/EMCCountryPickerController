@@ -8,11 +8,6 @@ Pod::Spec.new do |s|
                    [ISO 3166-1 standard][iso3166], whose [ISO 3166-1 alpha-2] two-letter country
                    codes are used internally by the controller implementation.  Public domain
                    flags are available for every country.
-
-                   The `EMCCountryPickerController` library ships with localised country names in: 
-                     * English (en).
-                     * Italian (it).
-                     * Spanish (es).
                    DESC
   s.homepage     = "https://github.com/emcrisostomo/EMCCountryPickerController"
   s.license      = { :type => "BSD", :file => "LICENSE" }
@@ -20,8 +15,8 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://thegreyblog.blogspot.com"
   s.platform     = :ios, "6.1"
   s.source       = { :git => "https://github.com/emcrisostomo/EMCCountryPickerController.git", :tag => "1.3.2" }
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-  s.resources = "Resources/*.png", "Resources/*.plist"
+  s.source_files  = "EMCCountryPickerController", "EMCCountryPickerController/**/*.{h,m}"
+  s.exclude_files = "EMCCountryPickerController/Exclude"
+  s.resources = "EMCCountryPickerController/EMCCountryPickerController.bundle"
   s.requires_arc = true
 end

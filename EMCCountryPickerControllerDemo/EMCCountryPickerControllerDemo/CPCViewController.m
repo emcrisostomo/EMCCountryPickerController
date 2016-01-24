@@ -7,7 +7,7 @@
 //
 
 #import "CPCViewController.h"
-#import "../../Classes/EMCCountryPickerController.h"
+#import "EMCCountryPickerController.h"
 
 @interface CPCViewController ()
 
