@@ -310,7 +310,9 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     // Resize flag
     if (self.showFlags)
     {
-        cell.imageView.image = [[UIImage imageNamed:countryCode] fitInSize:CGSizeMake(self.flagSize, self.flagSize)];
+        NSString *imagePath = [NSString stringWithFormat:@"EMCCountryPickerController.bundle/%@", countryCode];
+        UIImage *image = [UIImage imageNamed:imagePath inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
+        cell.imageView.image = [image fitInSize:CGSizeMake(self.flagSize, self.flagSize)];
     }
     
     // Draw a border around the flag view if requested
@@ -390,8 +392,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
         }
         else
         {
-            [NSException raise:@"Unknown country code"
-                        format:@"Unknown country code %@", code];
+            [NSException raise:@"Unknown country code" format:@"Unknown country code %@", code];
         }
     }
     

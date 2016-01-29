@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../../Classes/EMCCountryDelegate.h"
+#import "EMCCountryDelegate.h"
 
 @interface CPCViewController : UIViewController<EMCCountryDelegate>
 
