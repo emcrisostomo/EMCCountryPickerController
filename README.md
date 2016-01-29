@@ -192,7 +192,8 @@ Bug reports can be opened at the [official GitHub repository][cp].
 [cp]: https://github.com/emcrisostomo/EMCCountryPickerController
 
 ----
-Copyright (c) 2014, Enrico Maria Crisostomo
+Copyright (c) 2014-2015 Enrico Maria Crisostomo
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
