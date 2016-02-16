@@ -42,7 +42,7 @@ a country's flag is shown at the left of the country name.
 Prerequisites
 -------------
 
-This library has been built with XCode 5.1.1 using iOS 7.1 as a build target.
+This library has been built with Xcode 5.1.1 using iOS 7.1 as a build target.
 This library requires iOS >= 6.1.
 
 This library requires [ARC][arc] (_Automatic Reference Counting_) and
