@@ -15,6 +15,7 @@
 - (void)chooseCountry:(EMCCountry *)chosenCountry;
 
 @property (weak) IBOutlet id<EMCCountryDelegate> countryDelegate;
+@property (copy) void (^onCountrySelected)(EMCCountry *country);
 @property (copy) NSSet *availableCountryCodes;
 @property NSLocale *countryNameDisplayLocale;
 @property BOOL showFlags;
