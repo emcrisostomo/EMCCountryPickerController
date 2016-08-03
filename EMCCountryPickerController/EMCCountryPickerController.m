@@ -22,8 +22,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 
 @implementation EMCCountryPickerController
 {
-    UISearchDisplayController *displayController;
-    UISearchBar *searchBar;
+    UISearchController *displayController;
     UIView *rootView;
     UITableView *countryTable;
     EMCCountry * _selectedCountry;
@@ -63,87 +62,37 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     [self validateSettings];
     [self loadCountries];
     
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                             attribute:NSLayoutAttributeTop
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.topLayoutGuide
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1
-                                                              constant:0]];
-    }
-    else
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                             attribute:NSLayoutAttributeTop
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.view
-                                                             attribute:NSLayoutAttributeTop
-                                                            multiplier:1
-                                                              constant:0]];
-    }
-    
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                         attribute:NSLayoutAttributeCenterX
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
+                                                         attribute:NSLayoutAttributeTrailing
                                                          relatedBy:NSLayoutRelationEqual
-                                                            toItem:rootView
-                                                         attribute:NSLayoutAttributeCenterX
+                                                            toItem:countryTable
+                                                         attribute:NSLayoutAttributeTrailing
                                                         multiplier:1
                                                           constant:0]];
     
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
                                                          attribute:NSLayoutAttributeLeading
                                                          relatedBy:NSLayoutRelationEqual
-                                                            toItem:rootView
+                                                            toItem:countryTable
                                                          attribute:NSLayoutAttributeLeading
                                                         multiplier:1
                                                           constant:0]];
     
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:countryTable
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide
                                                          attribute:NSLayoutAttributeTop
                                                          relatedBy:NSLayoutRelationEqual
-                                                            toItem:searchBar
+                                                            toItem:countryTable
                                                          attribute:NSLayoutAttributeBottom
                                                         multiplier:1
                                                           constant:0]];
     
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
-                                                         attribute:NSLayoutAttributeTrailing
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.topLayoutGuide
+                                                         attribute:NSLayoutAttributeTop
                                                          relatedBy:NSLayoutRelationEqual
                                                             toItem:countryTable
-                                                         attribute:NSLayoutAttributeTrailing
+                                                         attribute:NSLayoutAttributeTop
                                                         multiplier:1
-                                                          constant:0]];
-    
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
-                                                         attribute:NSLayoutAttributeLeading
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:countryTable
-                                                         attribute:NSLayoutAttributeLeading
-                                                        multiplier:1
-                                                          constant:0]];
-    
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomLayoutGuide
-                                                             attribute:NSLayoutAttributeTop
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:countryTable
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1
-                                                              constant:0]];
-    }
-    else
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.view
-                                                             attribute:NSLayoutAttributeBottom
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:countryTable
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1
-                                                              constant:0]];
-    }
+                                                          constant:-20]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -184,23 +133,15 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     countryTable.delegate = self;
     [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
     
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, 0)];
-    [searchBar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    searchBar.delegate = self;
-    [searchBar sizeToFit];
+    displayController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    displayController.searchResultsUpdater = self;
+    displayController.dimsBackgroundDuringPresentation = NO;
+    displayController.searchBar.delegate = self;
+    [displayController.searchBar sizeToFit];
     
-    [rootView addSubview:searchBar];
-    
-    displayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar
-                                                          contentsController:self];
-    displayController.delegate = self;
-    displayController.searchResultsDelegate = self;
-    displayController.searchResultsDataSource = self;
-    
-    [[[self searchDisplayController] searchResultsTableView] registerClass:[UITableViewCell class]
-                                                    forCellReuseIdentifier:@"identifier"];
-    
-    if ([self searchDisplayController] == nil) NSLog(@"Search DC is nil");
+    [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
+    countryTable.tableHeaderView = displayController.searchBar;
+    self.definesPresentationContext = YES;
     
     [rootView addSubview:countryTable];
     
@@ -223,6 +164,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     self.flagBorderColor = [UIColor grayColor];
     self.flagBorderWidth = 0.5f;
     self.flagSize = 40.0f;
+    _countrySearchResults = [NSArray arrayWithArray:_countries];
 }
 
 - (void)validateSettings
@@ -243,13 +185,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        return [_countrySearchResults count];
-    }
-    
-    // Return the number of rows in the section.
-    return [_countries count];
+    return [_countrySearchResults count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -258,15 +194,8 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        _selectedCountry = [_countrySearchResults objectAtIndex:indexPath.row];
-        [self loadCountrySelection];
-    }
-    else
-    {
-        _selectedCountry = [_countries objectAtIndex:indexPath.row];
-    }
+    _selectedCountry = [_countrySearchResults objectAtIndex:indexPath.row];
+    [self loadCountrySelection];
     
     if (!self.countryDelegate)
     {
@@ -291,14 +220,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     
     EMCCountry *currentCountry;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        currentCountry = [_countrySearchResults objectAtIndex:indexPath.row];
-    }
-    else
-    {
-        currentCountry = [_countries objectAtIndex:indexPath.row];
-    }
+    currentCountry = [_countrySearchResults objectAtIndex:indexPath.row];
     
     NSString *countryCode = [currentCountry countryCode];
     
@@ -351,29 +273,18 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 
 #pragma mark - Search Box Management
 
-- (void)filterContentForSearchText:(NSString*)searchText
-                             scope:(NSString*)scope
-{
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF.countryName contains[cd] %@",
-                                    searchText];
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchString = searchController.searchBar.text;
+    NSPredicate *resultPredicate;
     
-    _countrySearchResults = [_countries filteredArrayUsingPredicate:resultPredicate];
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString
-                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                                      objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
+    if ([searchString isEqualToString:@""]) {
+        _countrySearchResults = [NSArray arrayWithArray:_countries];
+    } else {
+        resultPredicate = [NSPredicate predicateWithFormat:@"SELF.countryName contains[cd] %@", searchString];
+        _countrySearchResults = [_countries filteredArrayUsingPredicate:resultPredicate];
+    }
     
-    return YES;
-}
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView
-{
-    [self loadCountrySelection];
+    [countryTable reloadData];
 }
 
 #pragma mark - Country Management
@@ -419,6 +330,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"countryName" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:nameDescriptor, nil];
     _countries = [availableCountries sortedArrayUsingDescriptors:descriptors];
+    _countrySearchResults = _countries;
 }
 
 @end
