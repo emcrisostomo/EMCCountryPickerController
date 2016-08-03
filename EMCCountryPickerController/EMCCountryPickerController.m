@@ -136,7 +136,6 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     displayController = [[UISearchController alloc] initWithSearchResultsController:nil];
     displayController.searchResultsUpdater = self;
     displayController.dimsBackgroundDuringPresentation = NO;
-    displayController.searchBar.delegate = self;
     [displayController.searchBar sizeToFit];
     
     [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
