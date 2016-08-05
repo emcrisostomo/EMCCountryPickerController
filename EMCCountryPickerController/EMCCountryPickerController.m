@@ -112,7 +112,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     
     [countryTable reloadData];
     
-    NSUInteger selectedObjectIndex = [_countries indexOfObject:_selectedCountry];
+    NSUInteger selectedObjectIndex = [_countrySearchResults indexOfObject:_selectedCountry];
     
     if (selectedObjectIndex != NSNotFound)
     {
