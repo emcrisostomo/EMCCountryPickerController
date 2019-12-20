@@ -231,7 +231,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     if (self.showFlags)
     {
         NSString *imagePath = [NSString stringWithFormat:@"EMCCountryPickerController.bundle/%@", countryCode];
-        UIImage *image = [UIImage imageNamed:imagePath inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
+        UIImage *image = [UIImage imageNamed:imagePath inBundle:[NSBundle bundleForClass:EMCCountryPickerController.class] compatibleWithTraitCollection:nil];
         cell.imageView.image = [image fitInSize:CGSizeMake(self.flagSize, self.flagSize)];
     }
     
@@ -270,14 +270,23 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchString = searchController.searchBar.text;
     NSPredicate *resultPredicate;
-    
+
     if ([searchString isEqualToString:@""]) {
         _countrySearchResults = [NSArray arrayWithArray:_countries];
-    } else {
-        resultPredicate = [NSPredicate predicateWithFormat:@"SELF.countryName contains[cd] %@", searchString];
-        _countrySearchResults = [_countries filteredArrayUsingPredicate:resultPredicate];
+        [countryTable reloadData];
+        return;
     }
-    
+
+    if (!self.countryNameDisplayLocale) {
+        resultPredicate = [NSPredicate predicateWithFormat:@"SELF.countryName contains[cd] %@", searchString];
+    } else {
+        resultPredicate = [NSPredicate predicateWithBlock:^BOOL(EMCCountry * _Nullable country, NSDictionary<NSString *,id> * _Nullable bindings) {
+            return [[country countryNameWithLocale:self.countryNameDisplayLocale] containsString:searchString];
+        }];
+    }
+
+    _countrySearchResults = [_countries filteredArrayUsingPredicate:resultPredicate];
+
     [countryTable reloadData];
 }
 
