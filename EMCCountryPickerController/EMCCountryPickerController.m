@@ -354,9 +354,15 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 - (void)filterContentForSearchText:(NSString*)searchText
                              scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF.countryName contains[cd] %@",
-                                    searchText];
+    NSPredicate *resultPredicate;
+    if (!self.countryNameDisplayLocale) {
+        resultPredicate = [NSPredicate predicateWithFormat:@"SELF.countryName contains[cd] %@", searchText];
+    } else {
+        resultPredicate = [NSPredicate predicateWithBlock:^BOOL(EMCCountry * _Nullable country, NSDictionary<NSString *,id> * _Nullable bindings) {
+            return [[country countryNameWithLocale:self.countryNameDisplayLocale] containsString:searchText];
+        }];
+    }
+    
     
     _countrySearchResults = [_countries filteredArrayUsingPredicate:resultPredicate];
 }
