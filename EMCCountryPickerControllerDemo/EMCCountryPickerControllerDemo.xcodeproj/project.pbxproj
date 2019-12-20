@@ -170,10 +170,9 @@
 			};
 			buildConfigurationList = 90FE0BA6192F99650056E748 /* Build configuration list for PBXProject "EMCCountryPickerControllerDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
