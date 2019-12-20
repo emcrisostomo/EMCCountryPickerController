@@ -315,7 +315,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     if (self.showFlags)
     {
         NSString *imagePath = [NSString stringWithFormat:@"EMCCountryPickerController.bundle/%@", countryCode];
-        UIImage *image = [UIImage imageNamed:imagePath inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
+        UIImage *image = [UIImage imageNamed:imagePath inBundle:[NSBundle bundleForClass:EMCCountryPickerController.class] compatibleWithTraitCollection:nil];
         cell.imageView.image = [image fitInSize:CGSizeMake(self.flagSize, self.flagSize)];
     }
     
