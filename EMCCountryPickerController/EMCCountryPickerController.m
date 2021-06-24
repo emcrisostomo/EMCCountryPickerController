@@ -86,13 +86,13 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
                                                         multiplier:1
                                                           constant:0]];
     
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.topLayoutGuide
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.view.safeAreaLayoutGuide
                                                          attribute:NSLayoutAttributeTop
                                                          relatedBy:NSLayoutRelationEqual
                                                             toItem:countryTable
                                                          attribute:NSLayoutAttributeTop
                                                         multiplier:1
-                                                          constant:-20]];
+                                                          constant:0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
